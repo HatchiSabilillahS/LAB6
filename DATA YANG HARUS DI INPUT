@@ -1,0 +1,20 @@
+Menu:
+1. Tambah Data Mahasiswa
+2. Tampilkan Daftar Nilai Mahasiswa
+3. Hapus Data Mahasiswa
+4. Ubah Data Mahasiswa
+5. Keluar
+Pilih menu (1-5): 1
+Masukkan nama mahasiswa: Ali
+Masukkan nilai mahasiswa: 80
+Data Ali berhasil ditambahkan.
+
+Menu:
+1. Tambah Data Mahasiswa
+2. Tampilkan Daftar Nilai Mahasiswa
+3. Hapus Data Mahasiswa
+4. Ubah Data Mahasiswa
+5. Keluar
+Pilih menu (1-5): 2
+Daftar Nilai Mahasiswa:
+Nama: Ali, Nilai: 80
