@@ -1,0 +1,75 @@
+# Daftar nilai mahasiswa yang disimpan dalam bentuk list of dictionaries
+nilai_mahasiswa = []
+
+# Fungsi untuk menambah data mahasiswa
+def tambah():
+    nama = input("Masukkan nama mahasiswa: ")
+    nilai = input("Masukkan nilai mahasiswa: ")
+    nilai_mahasiswa.append({'nama': nama, 'nilai': nilai})
+    print(f"Data {nama} berhasil ditambahkan.")
+
+# Fungsi untuk menampilkan data mahasiswa
+def tampilkan():
+    if len(nilai_mahasiswa) == 0:
+        print("Tidak ada data mahasiswa.")
+    else:
+        print("Daftar Nilai Mahasiswa:")
+        for data in nilai_mahasiswa:
+            print(f"Nama: {data['nama']}, Nilai: {data['nilai']}")
+
+# Fungsi untuk menghapus data mahasiswa berdasarkan nama
+def hapus(nama):
+    global nilai_mahasiswa
+    ditemukan = False
+    for i in range(len(nilai_mahasiswa)):
+        if nilai_mahasiswa[i]['nama'].lower() == nama.lower():
+            del nilai_mahasiswa[i]
+            ditemukan = True
+            print(f"Data mahasiswa {nama} berhasil dihapus.")
+            break
+    if not ditemukan:
+        print(f"Data mahasiswa dengan nama {nama} tidak ditemukan.")
+
+# Fungsi untuk mengubah data mahasiswa berdasarkan nama
+def ubah(nama):
+    ditemukan = False
+    for data in nilai_mahasiswa:
+        if data['nama'].lower() == nama.lower():
+            print(f"Data yang ditemukan: Nama: {data['nama']}, Nilai: {data['nilai']}")
+            nilai_baru = input("Masukkan nilai baru: ")
+            data['nilai'] = nilai_baru
+            ditemukan = True
+            print(f"Data nilai mahasiswa {nama} berhasil diubah.")
+            break
+    if not ditemukan:
+        print(f"Data mahasiswa dengan nama {nama} tidak ditemukan.")
+
+# Menu utama untuk menjalankan program
+def menu():
+    while True:
+        print("\nMenu:")
+        print("1. Tambah Data Mahasiswa")
+        print("2. Tampilkan Daftar Nilai Mahasiswa")
+        print("3. Hapus Data Mahasiswa")
+        print("4. Ubah Data Mahasiswa")
+        print("5. Keluar")
+        pilihan = input("Pilih menu (1-5): ")
+
+        if pilihan == '1':
+            tambah()
+        elif pilihan == '2':
+            tampilkan()
+        elif pilihan == '3':
+            nama_hapus = input("Masukkan nama mahasiswa yang ingin dihapus: ")
+            hapus(nama_hapus)
+        elif pilihan == '4':
+            nama_ubah = input("Masukkan nama mahasiswa yang ingin diubah: ")
+            ubah(nama_ubah)
+        elif pilihan == '5':
+            print("Terima kasih, program selesai.")
+            break
+        else:
+            print("Pilihan tidak valid. Silakan pilih menu yang benar.")
+
+# Menjalankan menu utama
+menu()
